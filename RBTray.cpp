@@ -47,7 +47,7 @@ HICON GetWindowIcon(HWND hwnd) {
     if (icon = (HICON)SendMessage(hwnd, WM_GETICON, ICON_BIG, 0)) return icon;
     if (icon = (HICON)GetClassLongPtr(hwnd, GCLP_HICONSM)) return icon;
     if (icon = (HICON)GetClassLongPtr(hwnd, GCLP_HICON)) return icon;
-    return LoadIcon(NULL, IDI_WINLOGO);
+	return LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON1));
 }
 
 static bool AddToTray(int i) {
@@ -168,11 +168,11 @@ void ExecuteMenu() {
         MessageBox(NULL, L"Error creating menu.", L"RBTray", MB_OK | MB_ICONERROR);
         return;
     }
-    AppendMenu(hMenu, MF_STRING, IDM_ABOUT,   L"About RBTray");
-    AppendMenu(hMenu, MF_STRING, IDM_EXIT,    L"Exit RBTray");
+    AppendMenu(hMenu, MF_STRING, IDM_ABOUT,   L"关于RBTray");
+    AppendMenu(hMenu, MF_STRING, IDM_EXIT,    L"离开RBTray");
     AppendMenu(hMenu, MF_SEPARATOR, 0, NULL); //--------------
-    AppendMenu(hMenu, MF_STRING, IDM_CLOSE,   L"Close Window");
-    AppendMenu(hMenu, MF_STRING, IDM_RESTORE, L"Restore Window");
+    AppendMenu(hMenu, MF_STRING, IDM_CLOSE,   L"退出程序");
+    AppendMenu(hMenu, MF_STRING, IDM_RESTORE, L"恢复窗口");
 
     GetCursorPos(&point);
     SetForegroundWindow(_hwndHook);
