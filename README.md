@@ -11,3 +11,6 @@ Update project files to VS2015.
 
 Version 4.6
 Fix compatibility issue with some Windows 10 64 bit environments.
+
+Version 4.7
+add default icon for UWP.
