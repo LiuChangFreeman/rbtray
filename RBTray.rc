@@ -59,7 +59,11 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,75,146,50,14
     ICON            IDI_RBTRAY,IDC_STATIC,7,7,20,20
-    LTEXT           "RBTray 4.7.1\r\nFreeware\r\n\r\nThis program is distributed under the terms of the GNU General Public License.\r\n\r\nCopyright ?1998-2018\r\n\r\nNikolay Redko\r\nhttp://rbtray.sourceforge.net/\r\n\r\nJ.D. Purcell\r\nhttp://www.moitah.net/\r\n\r\nliuchangfreeman\r\nwww.tjservice.cn",IDC_STATIC,38,7,151,132
+	LTEXT           "RBTray 4.7.1\r\nFreeware\r\n\r\nThis program is distributed under the terms of the GNU General Public License.\r\n\r\nCopyright ?1998-2018", IDC_STATIC, 38, 7, 151, 16
+	LTEXT           "Nikolay Redko\r\nhttp://rbtray.sourceforge.net/", IDC_STATIC, 38, 27, 151, 16
+	LTEXT           "J.D. Purcell\r\nhttp://www.moitah.net/", IDC_STATIC, 38, 47, 151, 16
+	LTEXT           "Benbuck Nason\r\nhttps://github.com/benbuck/rbtray-code", IDC_STATIC, 38, 67, 151, 16
+	LTEXT           "liuchangfreeman\r\nhttp://www.tjservice.cn", IDC_STATIC, 38, 87, 151, 16
 END
 
 
