@@ -15,6 +15,7 @@
     <RootNamespace>RBTray</RootNamespace>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectName>RBTray</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -114,6 +115,7 @@
   <ItemGroup>
     <Image Include="..\..\..\..\Desktop\logo.bmp" />
     <Image Include="logo.ico" />
+    <Image Include="microsoft.ico" />
     <Image Include="winlogo.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

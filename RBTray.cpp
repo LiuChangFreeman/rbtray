@@ -47,7 +47,7 @@ HICON GetWindowIcon(HWND hwnd) {
     if (icon = (HICON)SendMessage(hwnd, WM_GETICON, ICON_BIG, 0)) return icon;
     if (icon = (HICON)GetClassLongPtr(hwnd, GCLP_HICONSM)) return icon;
     if (icon = (HICON)GetClassLongPtr(hwnd, GCLP_HICON)) return icon;
-	return LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON1));
+	return LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_ICON2));
 }
 
 static bool AddToTray(int i) {
@@ -165,11 +165,11 @@ void ExecuteMenu() {
 
     hMenu = CreatePopupMenu();
     if (!hMenu) {
-        MessageBox(NULL, L"Error creating menu.", L"RBTray", MB_OK | MB_ICONERROR);
+        MessageBox(NULL, L"Error creating menu.", L"TrayHelper", MB_OK | MB_ICONERROR);
         return;
     }
-    AppendMenu(hMenu, MF_STRING, IDM_ABOUT,   L"关于RBTray");
-    AppendMenu(hMenu, MF_STRING, IDM_EXIT,    L"离开RBTray");
+    AppendMenu(hMenu, MF_STRING, IDM_ABOUT,   L"关于TrayHelper");
+    AppendMenu(hMenu, MF_STRING, IDM_EXIT,    L"离开TrayHelper");
     AppendMenu(hMenu, MF_SEPARATOR, 0, NULL); //--------------
     AppendMenu(hMenu, MF_STRING, IDM_CLOSE,   L"退出程序");
     AppendMenu(hMenu, MF_STRING, IDM_RESTORE, L"恢复窗口");
@@ -279,16 +279,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLine
             SendMessage(_hwndHook, WM_CLOSE, 0, 0);
         }
         else {
-            MessageBox(NULL, L"RBTray is already running.", L"RBTray", MB_OK | MB_ICONINFORMATION);
+            MessageBox(NULL, L"您已运行托盘助手，无需重复打开", L"TrayHelper", MB_OK | MB_ICONINFORMATION);
         }
         return 0;
     }
     if (!(_hLib = LoadLibrary(L"RBHook.dll"))) {
-        MessageBox(NULL, L"Error loading RBHook.dll.", L"RBTray", MB_OK | MB_ICONERROR);
+        MessageBox(NULL, L"Error loading RBHook.dll.", L"TrayHelper", MB_OK | MB_ICONERROR);
         return 0;
     }
     if (!RegisterHook(_hLib)) {
-        MessageBox(NULL, L"Error setting hook procedure.", L"RBTray", MB_OK | MB_ICONERROR);
+        MessageBox(NULL, L"Error setting hook procedure.", L"TrayHelper", MB_OK | MB_ICONERROR);
         return 0;
     }
     wc.style         = 0;
@@ -302,11 +302,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR szCmdLine
     wc.lpszMenuName  = NULL;
     wc.lpszClassName = NAME;
     if (!RegisterClass(&wc)) {
-        MessageBox(NULL, L"Error creating window class", L"RBTray", MB_OK | MB_ICONERROR);
+        MessageBox(NULL, L"Error creating window class", L"TrayHelper", MB_OK | MB_ICONERROR);
         return 0;
     }
     if (!(_hwndHook = CreateWindow(NAME, NAME, WS_OVERLAPPED, 0, 0, 0, 0, (HWND)NULL, (HMENU)NULL, (HINSTANCE)hInstance, (LPVOID)NULL))) {
-        MessageBox(NULL, L"Error creating window", L"RBTray", MB_OK | MB_ICONERROR);
+        MessageBox(NULL, L"Error creating window", L"TrayHelper", MB_OK | MB_ICONERROR);
         return 0;
     }
     for (int i = 0; i < MAXTRAYITEMS; i++) {

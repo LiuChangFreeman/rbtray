@@ -13,41 +13,13 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// 中文(简体，中国) resources
-
-#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
-LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
-#pragma code_page(936)
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Icon
-//
-
-// Icon with lowest ID value placed first to ensure application icon
-// remains consistent on all systems.
-IDI_ICON1               ICON                    "logo.ico"
-
-#endif    // 中文(简体，中国) resources
-/////////////////////////////////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////////////////////////////
-// 英语(美国) resources
+// English (U.S.) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Icon
-//
-
-// Icon with lowest ID value placed first to ensure application icon
-// remains consistent on all systems.
-IDI_RBTRAY              ICON                    "RBTray.ico"
-
+#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -82,13 +54,12 @@ END
 
 IDD_ABOUT DIALOGEX 0, 0, 199, 163
 STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "??RBTray"
+CAPTION "About RBTray"
 FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "OK",IDOK,72,96,50,14
+    DEFPUSHBUTTON   "OK",IDOK,75,146,50,14
     ICON            IDI_RBTRAY,IDC_STATIC,7,7,20,20
-    LTEXT           "RBTray 4.7",IDC_STATIC,74,34,76,8
-    LTEXT           "Copyright 1998-2017 tjservice.cn",IDC_STATIC,46,66,108,10
+    LTEXT           "RBTray 4.7.1\r\nFreeware\r\n\r\nThis program is distributed under the terms of the GNU General Public License.\r\n\r\nCopyright ?1998-2018\r\n\r\nNikolay Redko\r\nhttp://rbtray.sourceforge.net/\r\n\r\nJ.D. Purcell\r\nhttp://www.moitah.net/\r\n\r\nliuchangfreeman\r\nwww.tjservice.cn",IDC_STATIC,38,7,151,132
 END
 
 
@@ -98,14 +69,14 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO
+GUIDELINES DESIGNINFO 
 BEGIN
     IDD_ABOUT, DIALOG
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 192
         TOPMARGIN, 7
-        BOTTOMMARGIN, 156
+        BOTTOMMARGIN, 136
     END
 END
 #endif    // APSTUDIO_INVOKED
@@ -113,12 +84,21 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_RBTRAY              ICON                    "RBTray.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
 // Version
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 4,7,0,0
- PRODUCTVERSION 4,7,0,0
+ FILEVERSION 4,3,0,0
+ PRODUCTVERSION 4,3,0,0
  FILEFLAGSMASK 0x17L
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -134,12 +114,12 @@ BEGIN
         BLOCK "040904b0"
         BEGIN
             VALUE "FileDescription", "RBTray"
-            VALUE "FileVersion", "4.7.0.0"
+            VALUE "FileVersion", "4, 7, 1, 0"
             VALUE "InternalName", "RBTray"
-            VALUE "LegalCopyright", "Copyright ?1998-2011 Nikolay Redko, J.D. Purcell, Benbuck Nason,Freeman LiuChang"
+            VALUE "LegalCopyright", "Copyright ?1998-2018 Nikolay Redko, J.D. Purcell, liuchangfreeman"
             VALUE "OriginalFilename", "RBTray.exe"
             VALUE "ProductName", "RBTray"
-            VALUE "ProductVersion", "4.7.0.0"
+            VALUE "ProductVersion", "4, 7, 1, 0"
         END
     END
     BLOCK "VarFileInfo"
@@ -148,18 +128,7 @@ BEGIN
     END
 END
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// AFX_DIALOG_LAYOUT
-//
-
-IDD_ABOUT AFX_DIALOG_LAYOUT
-BEGIN
-    0
-END
-
-#endif    // 英语(美国) resources
+#endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
